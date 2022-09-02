@@ -1,0 +1,11 @@
+- We used 4 arrays
+    - 2 of our arrays are final, contain description and price
+    - The other arrays store the item count and the total item count for the day
+
+- We used for loops to traverse our arrays
+
+- Variables and methods defined in header file
+
+Instructions to compile
+g++ spaceX.cpp -o space
+./space
