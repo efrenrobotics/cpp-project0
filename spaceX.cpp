@@ -2,8 +2,8 @@
 
 // Displays the items menu
 // Efren
-void displayMenu(){
-    for(int i = 1; i <= 6; i++){
+void displayMenu() {
+    for (int i = 1; i <= 6; i++) {
         cout << "[" << i << "] " << left << setw(19) << description[i - 1];
         cout << setprecision(2) << fixed;
         cout << "$" << right << setw(7) << prices[i-1] << endl;
@@ -13,14 +13,14 @@ void displayMenu(){
 
 // Get user input, print error if item outside of menu
 // Efren
-void getInput(){
-    int input;
-    while(input != 0){
+void getInput() {
+    int input = -1;
+    while (input != 0) {
         cin >> input;
-        if(input < 0 || input > 6){
+        if (input < 0 || input > 6) {
             cout << "*Error: There is no item " << input << "." << endl;
             cout << "Processing other items..." << endl;
-        }else{
+        } else {
             itemCount[input - 1]++;
             totalItemCount[input - 1]++;
         }
@@ -56,13 +56,13 @@ void resetCount() {
 
 // Display totals for the day
 // Angel
-void printTotal(){
+void printTotal() {
     cout << "*** End of Day:" << endl;
     cout << "Total sales: $" << totalForDay << endl;
     int max = 0;
     int maxItem = 0;
-    for(int i = 0; i < 6; i++){
-        if(totalItemCount[i] > max){
+    for (int i = 0; i < 6; i++) {
+        if(totalItemCount[i] > max) {
             max = totalItemCount[i];
             maxItem = i;
         }
@@ -70,7 +70,7 @@ void printTotal(){
     cout << "Item ordered most often: " << description[maxItem] << " was purchased " << totalItemCount[maxItem] << " times." << endl;
 }
 
-int main(){
+int main() {
     bool playAgain = true;
     while (playAgain) {
         displayMenu();
